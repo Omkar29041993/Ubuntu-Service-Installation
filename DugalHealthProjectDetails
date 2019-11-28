@@ -1,0 +1,22 @@
+The details of Dugal Diabetes project to add it on Tudip
+
+Portfolio.
+Android: https://play.google.com/store/apps/details?id=com.dugalhealth&hl=en_IN
+iOS: https://itunes.apple.com/gb/app/dugaldiabetes/id1397908320?mt=8
+Dev URL: http://dugalhealth.zibtekdev.com
+Prod URL: https://admin.dugalhealth.com
+
+
+Technologies:
+iOS - React-Native
+Web End - Angular 4
+API End - Node JS
+
+
+Description:
+1.Dugal Diabetes helps the user to have control on his/her diabetes
+2.In this User can create meal with respect to time and can give feedback of that particular meal 
+3.The user can view the graph of meal created, Bg level, Exercise etc
+4.The user can create meal, BG level, exercise etc in previous time
+5.This app helps the user to have track on the diabetes level
+

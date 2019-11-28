@@ -1,0 +1,14 @@
+Installing php on ubuntu
+
+1.Procedure to install php-7.1 on ubuntu
+   https://webtatic.com/packages/php71/
+2.Command to install php-7.1 on ubuntu
+   rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+   yum install -y php71w php71w-cli php71w-common php71w-mbstring php71w-pdo php71w-mysql php71w-devel php71w-pear php71w-gd php71w-intl php71w-pdo_dblib gcc unixODBC* wget curl composer
+3.Command to serch all packages of php-7.1
+   yum search php71w
+4. For configuring nginx/apache for php website, Install mod_php71w module(php module of apache)
+   sudo yum install mod_php71w 
+
+

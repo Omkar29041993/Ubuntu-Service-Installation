@@ -1,0 +1,27 @@
+Hi all,
+
+ 
+
+Jethro and Zogie - I’d like to e-introduce you to the team at Tudip; Vinay, Chinmaya and Harsh. 
+
+Tudipians – please meet Jethro and Zogie from the Brightside Project team.
+
+ 
+
+Jethro and Zogie have kindly volunteered to be the main point of contact for Tudip whilst Nick Wells and I are on annual leave in December.  Nick will be here for most of December, but will be taking a few days leave which is when Jethro and Zogie will provide cover. Otherwise, Nick will be the main point of contact at nick.wells@brightside.org.uk
+
+ 
+
+Jethro and Zogie are aware that the tech’s team focus for December will be on load testing a cloned version of the mentoring platform and completing the current priorities list, so they will be only be reporting critical issues regarding the platform (such as the messaging system failing, data breaches or and safe-guarding issues regarding users).   Critical issues take priority over any planned work and should be addressed immediately.
+
+ 
+
+Jethro, Zogie:  please email the tech team at brightsideapp@tudip.com with any critical support issues whilst Nick and I are away, please also cc both of us in.
+
+ 
+
+Please everyone, do  ask any questions if you have them whilst I’m still around (I’m signing-off this Friday 5pm).
+
+ 
+
+Thanks very much everyone and good luck!

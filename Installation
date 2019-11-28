@@ -1,0 +1,21 @@
+1.Installing Apache, MySQL, PHP (LAMP) Stack on Ubuntu 18.04:
+
+https://devanswers.co/installing-apache-mysql-php-lamp-stack-ubuntu-18-04/
+
+2. Apache2 with PHP 7.1 Support on Ubuntu 18.04 LTS Server
+
+https://websiteforstudents.com/apache2-with-php-7-1-support-on-ubuntu-18-04-lts-beta-server/
+
+mysql80-community-release-el7-1.noarch.rpm
+
+wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+
+wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+
+sudo rpm -ivh mysql57-community-release-el7-9.noarch.rpm
+
+sudo rpm -ivh mysql80-community-release-el7-1.noarch.rpm
+
+
+username: root
+password: tudip123

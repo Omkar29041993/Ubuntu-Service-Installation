@@ -1,0 +1,75 @@
+Nginx Setup:
+
+1. Install Nginx on ubuntu
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04#step-1-install-nginx
+2. Setting up nginx with php-7.1 on ubuntu 16.04 and 17.04
+https://websiteforstudents.com/setup-nginx-php-7-1-ubuntu-16-04-17-04/
+3. Handling CORS issue in Nginx
+http://tech.osteel.me/posts/2015/07/19/handling-cors-with-nginx.html
+4. 413 request entry too large in nginx
+https://serverfault.com/questions/814767/413-request-entity-too-large-in-nginx-with-client-max-body-size-set
+5. Lamp server setup on ubuntu:
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04#step-3-%E2%80%94-installing-php
+https://websiteforstudents.com/installing-apache2-mariadb-on-ubuntu-16-04-17-10-18-04-with-php-7-2-support-lamp/
+https://www.linode.com/docs/web-servers/lamp/install-lamp-stack-on-ubuntu-18-04/
+6. Configure drupal in apache2 in ubuntu
+https://websiteforstudents.com/setup-drupal-cms-on-ubuntu-18-04-lts-beta-with-apache2-mariadb-and-php-7-1-support/
+7. Reverse proxy setup for java application in production
+https://www.linode.com/docs/development/java/how-to-deploy-spring-boot-applications-nginx-ubuntu-16-04/
+
+
+################################################################################################################################
+Redirection:
+
+Redirect non-www to www and http request to https in ELB
+	if ($host !~ ^www\.) {
+                rewrite ^ $scheme://www.$host$request_uri permanent;
+        }
+
+        if ($scheme != "https") {
+                return 301 https://$host$request_uri;
+        }
+-------------------------------------------------------------------------------------------
+Redirect non-www to www and http request to https in ELB
+
+	if ($host !~ ^www\.) {
+                rewrite ^ $scheme://www.$host$request_uri permanent;
+        }
+
+        if ($http_x_forwarded_proto = 'http'){
+                return 301 https://$host$request_uri;
+        }
+--------------------------------------------------------------------------------------------
+
+Redirect www to non-www and http to https 
+
+	if ($host ~* ^www\.(.*)$) {
+                return 301 $scheme://$1$request_uri ;
+        }
+
+        if ($scheme != "https") {
+                return 301 https://$host$request_uri;
+        }
+---------------------------------------------------------------------------------------------
+Redirect www to non-www and http to https in ELB
+
+	if ($http_x_forwarded_proto = 'http') {
+                return 301 https://$host$request_uri;
+        }
+
+
+	if ($host ~* ^www\.(.*)$) {
+                return 301 $scheme://$1$request_uri ;
+        }
+
+##########################################################################################################################################
+
+Error: Rest API call with api_key in header fails if nginx is proxying nodejs application
+Solution: https://stackoverflow.com/questions/37938957/rest-api-call-with-api-key-in-header-fails-if-nginx-is-proxying-moqui-application
+
+##########################################################################################################################################
+
+Error: Request failed with status code 413 or 413 Request Entity Too Large (Image is too large unable to upload)
+Solution: https://www.keycdn.com/support/413-request-entity-too-large
+
+#########################################################################################################################################i

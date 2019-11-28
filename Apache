@@ -1,0 +1,89 @@
+Apache:
+
+
+Redirection rule for load balancer (To redirect non-www traffic to www and to redirect http to https)
+-------------------------------------------------------------------------------------------------------
+Virtualhost file
+
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName www.omkartirodkar.tk
+    ServerAlias omkartirodkar.tk
+    DocumentRoot /var/www/example.com/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<Directory /var/www/example.com/html/>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+ </Directory>
+
+--------------------------------------------------------------------------------------------------------
+Virtualhost file for HTTP and HTTPS
+
+<VirtualHost *:80>
+     ServerAdmin admin@example.com
+     DocumentRoot /var/www/html/training-amigo/drupal/
+     ServerName preprod.trainingamigo.com
+     ServerAlias www.preprod.trainingamigo.com
+
+     ErrorLog /var/log/apache2/preprod.error.log
+     CustomLog /var/log/apache2/preprod.access.log combined
+
+     <Directory /var/www/html/training-amigo/drupal>
+            Options FollowSymlinks
+            AllowOverride All
+            Require all granted
+     </Directory>
+
+</VirtualHost>
+
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+     ServerAdmin admin@example.com
+     DocumentRoot /var/www/html/training-amigo/drupal/
+     ServerName preprod.trainingamigo.com
+     ServerAlias www.preprod.trainingamigo.com
+
+     ErrorLog /var/log/apache2/preprod.error.log
+     CustomLog /var/log/apache2/preprod.access.log combined
+
+     <Directory /var/www/html/training-amigo/drupal>
+            Options FollowSymlinks
+            AllowOverride All
+            Require all granted
+     </Directory>
+
+	SSLEngine on
+	SSLCertificateFile /etc/letsencrypt/live/preprod.trainingamigo.com/fullchain.pem
+	SSLCertificateKeyFile /etc/letsencrypt/live/preprod.trainingamigo.com/privkey.pem
+	Include /etc/letsencrypt/options-ssl-apache.conf
+</VirtualHost>
+</IfModule>
+
+
+--------------------------------------------------------------------------------------------------------
+
+Redirect http to https 
+.htaccess file
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule .* https://%{HTTP:Host}%{REQUEST_URI} [L,R=permanent]
+
+#######################################################################################################
+
+Error: ERR_TOO_MANY_REDIRECTS.
+
+Solution: https://aws.amazon.com/premiumsupport/knowledge-center/redirect-http-https-elb/
+
+--------------------------------------------------------------------------------------------
+

@@ -1,0 +1,58 @@
+//login as: ubuntu
+
+sudo –i
+
+//Add a user and set its password
+
+adduser <username>
+
+mkdir /home/<username>/.ssh
+
+cd /home/<username>/.ssh
+
+//Generate the Key-Pair
+
+ssh-keygen -b 1024 -f <username> -t dsa
+
+//Copy the content of public key (file with .pub extension) into the authorized_keys which should be located inside the .ssh directory
+
+cat id_rsa.pub
+
+//Copy the content displayed on the shell
+
+vim authorized_keys
+
+//Paste the copied content in authorized_keys
+//Save and Close the file.
+
+//Now change the file permissions and the ownership
+
+chmod 700 /home/<username>/.ssh
+
+chmod 600 /home/<username>/.ssh/authorized_keys
+
+chown -R <username>:<username> /home/<username>/.ssh
+
+//Copy the private key to your machine from where you want to access the SFTP. You will need to convert the key to .ppk extension if you want to access the SFTP from Windows.
+
+//add our user into that group
+
+adduser <username> sftpusers
+
+
+
+// And Last Need to add user IP in AWS bastin instance security group
+
+
+
+chown root:root /home/<username>
+
+chown -R <username>:<username> /home/<username>/.ssh
+
+mkdir /sftp/<username>
+
+chown <username>:<username> /sftp/<username>
+
+//Restart SSH
+
+/etc/init.d/ssh restart

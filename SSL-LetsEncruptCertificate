@@ -1,0 +1,38 @@
+SSL Certificate:
+
+Important Links:
+Link1. Procedure to install lets encrypt certificate on Elastic Load Balancer-
+https://blog.cloudinvaders.com/installing-a-lets-encrypt-certificate-on-an-elastic-load-balancer/
+Link2. Procedure to configure nginx for lets encrypt certificate-
+https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/
+
+Procedure to create lets encrypt certificate-
+1. Create Certificate using procedure mentioned in link1
+2. If you are using Elastic load balancer, Add 443 https listner and provide Create IAM role for the certificate
+3. If you are not using Elastic load balancer, Configure Apache or Nginx web server using procedure mentined in the link2 
+4. Modify security group to allow https traffic in aws
+
+Procedure to upload lets encrypt certificate on AWS Load Balancers-
+https://stackoverflow.com/questions/37382741/how-to-renew-letsencrypt-cert-in-aws-load-balancer
+https://blog.alejandrocelaya.com/2016/08/16/setup-a-lets-encrypt-certificate-in-a-aws-elastic-load-balancer/
+
+##########################################################################################
+
+Procedure to create lets encrypt Certificate in apachce2 at ubuntu 18.04:
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
+
+Procedure to create lets encrypt Certificate in nginx at ubuntu 18.04
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04ro
+
+Procedure to delte lets encrypt Certificate
+https://medium.com/@matthagemann/correct-way-to-delete-a-certbot-ssl-certificate-e8ee123e6e01
+
+Command to delete lets encrypt certificate
+sudo certbot delete
+
+Command to renew lets encrypt certificate
+certbot renew
+
+#############################################################################################
+Renewing Lets encrypt certificate in AWS ELB using IAM
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html 

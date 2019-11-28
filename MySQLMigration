@@ -1,0 +1,6 @@
+Procedure to migrate mysql from one Disk space to another
+1. move /var/lib/mysql to the new disk path (e.g. /data/mysql)
+2. Modify mysql.conf file to change the data dir from /var/lib/mysql to /data/mysql
+
+Error: MySQL won't start after changing the datadir (14.04, mysql 5.7)
+Solution: https://askubuntu.com/questions/758898/mysql-wont-start-after-changing-the-datadir-14-04-mysql-5-7

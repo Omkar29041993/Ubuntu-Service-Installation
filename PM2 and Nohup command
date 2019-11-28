@@ -1,0 +1,10 @@
+PM2 Command to run node app in the background:
+
+1. Command to list all documnets: pm2 list: 
+2. Command to start pm2 application: pm2 start npm --name "AppName" -- start
+3. Command to stop application: pm2 stop "AppName"
+4. Commnad to delete application: pm2 delete "AppName"
+
+Nohup command to run python app in background:
+-nohup python run-dev.py &> cloudspin_log.out&
+

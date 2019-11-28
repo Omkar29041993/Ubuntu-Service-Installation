@@ -1,0 +1,38 @@
+Procedure to install mongodb on ubuntu:
+https://www.tecmint.com/install-mongodb-on-ubuntu-18-04/
+https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04
+
+Creating new user in mongodb:
+
+use admin
+db.createUser(
+   {
+     user: "admin",
+     pwd: "m0ng0adm1n",
+     roles: [ {role:"dbAdminAnyDatabase", db:"admin"}, {role:"userAdminAnyDatabase", db:"admin"}, {role:"readWriteAnyDatabase", db:"admin"}, {role:"root", db:"admin"} ]
+   }
+);
+
+db.createUser(
+   {
+     user: "ept",
+     pwd: "3ptm0ng0",
+     roles: [ {role:"readWrite", db:"ept"}, {role:"dbOwner", db:"etp"}  ]
+   }
+);
+
+Command for connecting mongodb database:
+mongo -u "<username>" -p --authenticationDatabase "<database name>"
+after that enter password: <password>
+e.g
+mongo -u "dugalhealth" -p --authenticationDatabase "dugalhealth"
+after that enter password:
+dug0lh3a!th
+
+Command for connecting mongodb database from remote location
+mongo -h <hostname> -u "<username>" -p --authenticationDatabase "<database name>"
+after that enter password: <password>
+e.g
+mongo -h 192.168.1.8 -u "dugalhealth" -p --authenticationDatabase "dugalhealth"
+after that enter password:
+dug0lh3a!th

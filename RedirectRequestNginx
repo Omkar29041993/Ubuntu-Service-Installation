@@ -1,0 +1,14 @@
+Redirect request in Nginx :
+
+1. Redirecting http request to https 
+
+if ($http_x_forwarded_proto = 'http'){
+    return 301 https://$host$request_uri;
+    }
+
+2. Redirect website from www to non-www
+
+if ($host ~ ^www\.(.)) {       
+    set $host_without_www $1;
+    rewrite ^(.*) http://$host_without_www$1 permanent;
+}

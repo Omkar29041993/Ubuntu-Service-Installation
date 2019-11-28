@@ -1,0 +1,6 @@
+1)Jenkins:
+	Github URL: http://18.224.32.3:8080/github-webhook/
+2)How to set jenkins environment variable
+	https://stackoverflow.com/questions/5818403/jenkins-hudson-environment-variables
+	Answers: Create .bashsrc file at jenkins root location i.e /var/lib/jenkins
+

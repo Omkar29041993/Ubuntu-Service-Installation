@@ -1,0 +1,26 @@
+Creating new users in MYsql:
+
+1. https://www.a2hosting.in/kb/developer-corner/mysql/managing-mysql-databases-and-users-from-the-command-line
+2. https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+3. https://dev.mysql.com/doc/refman/8.0/en/adding-users.html
+
+
+CREATE USER 'finley'@'%' IDENTIFIED BY 'password';
+
+GRANT ALL PRIVILEGES ON *.* TO 'finley'@'%' WITH GRANT OPTION;
+
+username: drupal
+password: drupa@l123
+
+CREATE USER 'drupal'@'%' IDENTIFIED BY 'drupal@123';
+GRANT ALL PRIVILEGES ON *.* TO 'drupal'@'%' WITH GRANT OPTION;
+
+Commnad for Connection:
+mysql -h 52.55.62.38 -u drupal -pdrupal@123
+
+Possible Error: ERROR 2003 (HY000): Can’t connect to MySQL server on ‘127.0.0.1’ (111)
+Solution: https://www.tecmint.com/fix-error-2003-hy000-cant-connect-to-mysql-server-on-127-0-0-1-111/
+
+Procedure to enable federated engine on mysql:
+https://stackoverflow.com/questions/5210309/how-can-i-enable-federated-engine-in-mysql-after-installation
+
